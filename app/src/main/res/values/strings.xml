@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Android Interview</string>
+    <string name="javaListQuestionName">Список вопросов Java</string>
+    <string-array name="javaListQuestion">
+        <item>Типы данных</item>
+        <item>ООП</item>
+        <item>Коллекции</item>
+        <item>Исключения</item>
+        <item>Потоки</item>
+    </string-array>
 </resources>
