@@ -1,9 +1,7 @@
 package com.example.smy.androidinterview;
 
-
 import android.app.ListFragment;
 import android.os.Bundle;
-;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
@@ -30,4 +28,5 @@ public class JavaListQuestionFragment extends ListFragment {
         myadapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, R.array.javaListQuestion);
         setListAdapter(myadapter);
     }
+
 }
