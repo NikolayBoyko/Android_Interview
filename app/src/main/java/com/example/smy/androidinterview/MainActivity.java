@@ -1,8 +1,11 @@
 package com.example.smy.androidinterview;
 
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -67,10 +70,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.android:
                 Toast.makeText(this, "Click on Android", Toast.LENGTH_SHORT).show();
+                addFragment(new Android());
                 break;
 
             case R.id.java:
                 Toast.makeText(this, "Click on Java", Toast.LENGTH_SHORT).show();
+                addFragment(new Java());
                 break;
 
             case R.id.settings:
@@ -84,6 +89,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void addFragment(Fragment fragment) {
+        if (getSupportFragmentManager() == null) {
+            return;
+        }
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.main_content, fragment);
+        fragmentTransaction.commit();
+
     }
 
 }
