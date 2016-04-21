@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:text="@string/app_name"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="36sp" />
 
 </FrameLayout>

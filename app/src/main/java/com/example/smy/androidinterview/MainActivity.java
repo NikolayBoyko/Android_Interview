@@ -1,6 +1,5 @@
 package com.example.smy.androidinterview;
 
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -29,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onContentChanged() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Android Interview");
-        toolbar.setTitleTextColor(Color.BLACK);
         setSupportActionBar(toolbar);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -70,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.android:
                 Toast.makeText(this, "Click on Android", Toast.LENGTH_SHORT).show();
-                addFragment(new Android());
+                addFragment(new MainFragment());
                 break;
 
             case R.id.java:
