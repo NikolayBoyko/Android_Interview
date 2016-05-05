@@ -3,19 +3,19 @@ package com.example.smy.androidinterview;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FirstFragment extends Fragment{
-
-    private int[] photo = {R.drawable.java_logo, R.drawable.android_logo, R.drawable.sql_logo, R.drawable.network_logo};
+public class JavaMainListQuestionFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
-    private GridLayoutManager lLayout;
+    private RecyclerView.LayoutManager mLayoutManager;
+
+    private static final String[] questionList = {"Типы данных", "ООП", "Исключения", "Коллекции", "Строки", "Потоки ввода/вывода"};
 
     @Nullable
     @Override
@@ -27,15 +27,13 @@ public class FirstFragment extends Fragment{
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
-        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.spacing);
-        mRecyclerView.addItemDecoration(new SpacesItemDecoration(spacingInPixels));
-        lLayout = new GridLayoutManager(getContext(), 2);
-        mRecyclerView.setLayoutManager(lLayout);
+        mLayoutManager  = new LinearLayoutManager(getContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyfirstFragmentAdapter(photo);
+        mAdapter = new MyJavaMainListQuestionAdapter(questionList);
         mRecyclerView.setAdapter(mAdapter);
-
     }
 
 }

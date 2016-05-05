@@ -1,15 +1,14 @@
 package com.example.smy.androidinterview;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
-
-    private String LOG_TAG = "myLog";
+public class MyfirstFragmentAdapter extends RecyclerView.Adapter<MyfirstFragmentAdapter.ViewHolder> {
 
     private int[] mImage;
 
@@ -23,13 +22,12 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         }
     }
 
-    public MyRecyclerAdapter(int[] myImage) {
+    public MyfirstFragmentAdapter(int[] myImage) {
         mImage = myImage;
     }
 
     @Override
-    public MyRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+    public MyfirstFragmentAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.first_fragment_item, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
@@ -41,9 +39,20 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(LOG_TAG,"click on item" + mImage[position]);
+                switch (position){
+                    case R.drawable.java_logo:
+                        return ;
+                }
             }
         });
+    }
+    public void addFragment(Fragment fragment) {
+/*
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.main_content, fragment);
+        fragmentTransaction.commit();
+*/
+
     }
 
     @Override
