@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.java:
                 Toast.makeText(this, "Click on Java", Toast.LENGTH_SHORT).show();
+                replaceFragment(new JavaMainListQuestionFragment());
                 break;
 
             case R.id.settings:
@@ -90,8 +91,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void addFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.main_content,fragment);
-        fragmentTransaction.commit();
+        fragmentTransaction.add(R.id.main_content, fragment).commit();
+    }
 
+    public void replaceFragment(Fragment fragment) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.main_content, fragment).commit();
     }
 }

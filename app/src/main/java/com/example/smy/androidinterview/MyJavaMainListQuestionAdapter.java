@@ -1,13 +1,16 @@
 package com.example.smy.androidinterview;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MyJavaMainListQuestionAdapter extends RecyclerView.Adapter<MyJavaMainListQuestionAdapter.ViewHolder> {
-
+    private Activity context;
     private String[] mQuestionList;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -33,12 +36,12 @@ public class MyJavaMainListQuestionAdapter extends RecyclerView.Adapter<MyJavaMa
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.myQuestion.setText(mQuestionList[position]);
         holder.myQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //my onClick void
+                Log.d("log", "click on: " + position);
             }
         });
     }

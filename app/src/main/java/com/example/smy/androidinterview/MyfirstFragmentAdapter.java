@@ -1,6 +1,9 @@
 package com.example.smy.androidinterview;
 
+import android.app.Activity;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,8 +13,8 @@ import android.widget.ImageView;
 
 public class MyfirstFragmentAdapter extends RecyclerView.Adapter<MyfirstFragmentAdapter.ViewHolder> {
 
+    private Activity context;
     private int[] mImage;
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imageView;
@@ -39,21 +42,16 @@ public class MyfirstFragmentAdapter extends RecyclerView.Adapter<MyfirstFragment
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (position){
+                switch (position) {
                     case R.drawable.java_logo:
-                        return ;
+               /*         JavaMainListQuestionFragment javaMainListQuestionFragment = new JavaMainListQuestionFragment();
+                        context.getFragmentManager().beginTransaction().add(R.id.main_content,javaMainListQuestionFragment).commit();*/
+                        return;
                 }
             }
         });
     }
-    public void addFragment(Fragment fragment) {
-/*
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.main_content, fragment);
-        fragmentTransaction.commit();
-*/
 
-    }
 
     @Override
     public int getItemCount() {
