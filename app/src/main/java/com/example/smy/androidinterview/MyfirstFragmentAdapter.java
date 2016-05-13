@@ -1,20 +1,22 @@
 package com.example.smy.androidinterview;
 
-import android.app.Activity;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MyfirstFragmentAdapter extends RecyclerView.Adapter<MyfirstFragmentAdapter.ViewHolder> {
 
-    private Activity context;
+    private FragmentActivity activity;
     private int[] mImage;
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imageView;
@@ -22,6 +24,7 @@ public class MyfirstFragmentAdapter extends RecyclerView.Adapter<MyfirstFragment
         public ViewHolder(View v) {
             super(v);
             imageView = (ImageView) v.findViewById(R.id.image_item);
+
         }
     }
 
@@ -39,18 +42,22 @@ public class MyfirstFragmentAdapter extends RecyclerView.Adapter<MyfirstFragment
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.imageView.setImageResource(mImage[position]);
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
+       /* holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (position) {
-                    case R.drawable.java_logo:
-               /*         JavaMainListQuestionFragment javaMainListQuestionFragment = new JavaMainListQuestionFragment();
-                        context.getFragmentManager().beginTransaction().add(R.id.main_content,javaMainListQuestionFragment).commit();*/
-                        return;
+                if (position == 0) {
+                    Log.d("log", "cllick on java");//лог выводится
+                    addFragment(new JavaMainListQuestionFragment());
                 }
             }
-        });
+        });*/
     }
+
+    public void addFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.main_content, fragment).commit();
+    }
+
 
 
     @Override

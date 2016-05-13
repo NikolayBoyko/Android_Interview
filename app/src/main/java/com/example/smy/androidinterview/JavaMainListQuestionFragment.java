@@ -8,13 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 public class JavaMainListQuestionFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
     private static final String[] questionList = {"Типы данных", "ООП", "Исключения", "Коллекции", "Строки", "Потоки ввода/вывода"};
 
     @Nullable
@@ -35,5 +35,4 @@ public class JavaMainListQuestionFragment extends Fragment {
         mAdapter = new MyJavaMainListQuestionAdapter(questionList);
         mRecyclerView.setAdapter(mAdapter);
     }
-
 }
