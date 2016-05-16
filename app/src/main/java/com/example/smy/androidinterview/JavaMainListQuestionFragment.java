@@ -15,7 +15,6 @@ public class JavaMainListQuestionFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private static final String[] questionList = {"Типы данных", "ООП", "Исключения", "Коллекции", "Строки", "Потоки ввода/вывода"};
 
     @Nullable
     @Override
@@ -32,7 +31,7 @@ public class JavaMainListQuestionFragment extends Fragment {
         mLayoutManager  = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyJavaMainListQuestionAdapter(questionList);
+        mAdapter = new MyJavaMainListQuestionAdapter(getResources().getStringArray(R.array.javaQuestionList));
         mRecyclerView.setAdapter(mAdapter);
     }
 }

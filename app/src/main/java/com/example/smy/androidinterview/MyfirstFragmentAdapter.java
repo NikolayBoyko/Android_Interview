@@ -1,20 +1,13 @@
 package com.example.smy.androidinterview;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MyfirstFragmentAdapter extends RecyclerView.Adapter<MyfirstFragmentAdapter.ViewHolder> {
 
-    private FragmentActivity activity;
     private int[] mImage;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -42,22 +35,7 @@ public class MyfirstFragmentAdapter extends RecyclerView.Adapter<MyfirstFragment
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.imageView.setImageResource(mImage[position]);
-       /* holder.imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (position == 0) {
-                    Log.d("log", "cllick on java");//лог выводится
-                    addFragment(new JavaMainListQuestionFragment());
-                }
-            }
-        });*/
     }
-
-    public void addFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.main_content, fragment).commit();
-    }
-
 
 
     @Override

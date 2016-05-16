@@ -11,8 +11,9 @@
         android:paddingTop="10dip"
         android:paddingBottom="10dip"
         android:gravity="center"
-        android:text="ffff"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
         android:textSize="45sp"/>
-
 
 </LinearLayout>

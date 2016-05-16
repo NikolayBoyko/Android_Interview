@@ -15,4 +15,12 @@
         <item>Android</item>
         <item>Java</item>
     </array>
+    <array name="javaQuestionList">
+        <item>Типы данных</item>
+        <item>ООП</item>
+        <item>Исключения</item>
+        <item>Коллекции</item>
+        <item>Строки</item>
+        <item>Потоки ввода/вывода</item>
+    </array>
 </resources>

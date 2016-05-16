@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 public class FirstFragment extends Fragment {
 
@@ -19,7 +21,6 @@ public class FirstFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private GridLayoutManager lLayout;
     FragmentTransaction fragmentTransaction;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,10 +31,12 @@ public class FirstFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
         mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+                view.setAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.animation_on_click));
                 switch (position) {
                     case 0:
                         replaceFragment(new JavaMainListQuestionFragment());
