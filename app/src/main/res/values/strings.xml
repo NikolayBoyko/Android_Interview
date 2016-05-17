@@ -23,4 +23,10 @@
         <item>Строки</item>
         <item>Потоки ввода/вывода</item>
     </array>
+    <integer-array name="icons">
+        <item>@drawable/java_logo</item>
+        <item>@drawable/android_logo</item>
+        <item>@drawable/sql_logo</item>
+        <item>@drawable/network_logo</item>
+    </integer-array>
 </resources>

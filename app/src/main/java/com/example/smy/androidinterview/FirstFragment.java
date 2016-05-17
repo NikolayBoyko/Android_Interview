@@ -6,12 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 public class FirstFragment extends Fragment {
@@ -20,7 +17,12 @@ public class FirstFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private GridLayoutManager lLayout;
-    FragmentTransaction fragmentTransaction;
+    private FragmentTransaction fragmentTransaction;
+    private final int IMAGE_JAVA = 0;
+    private final int IMAGE_ANDROID = 1;
+    private final int IMAGE_SQL = 2;
+    private final int IMAGE_NETWORKS = 3;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,15 +33,25 @@ public class FirstFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
         mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                view.setAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.animation_on_click));
+                view.setAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.animation_on_click));
                 switch (position) {
-                    case 0:
+                    case IMAGE_JAVA:
                         replaceFragment(new JavaMainListQuestionFragment());
+                        break;
+                    case IMAGE_ANDROID:
+                        //open fragment android question
+                        break;
+                    case IMAGE_SQL:
+                        //open fragment sql questions
+                        break;
+                    case IMAGE_NETWORKS:
+                        //open fragment networks questions
+                        break;
+                    default:
                         break;
                 }
             }
