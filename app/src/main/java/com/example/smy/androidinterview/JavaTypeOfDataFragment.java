@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class JavaMainListQuestionFragment extends Fragment {
+public class JavaTypeOfDataFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -65,7 +65,7 @@ public class JavaMainListQuestionFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyJavaMainListQuestionAdapter(getResources().getStringArray(R.array.javaQuestionList));
+        mAdapter = new MyJavaMainListQuestionAdapter(getResources().getStringArray(R.array.typesOfData));
         mRecyclerView.setAdapter(mAdapter);
     }
     public void addFragment(Fragment fragment) {

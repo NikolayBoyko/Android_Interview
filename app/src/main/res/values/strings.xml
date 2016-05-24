@@ -29,4 +29,19 @@
         <item>@drawable/sql_logo</item>
         <item>@drawable/network_logo</item>
     </integer-array>
+    <array name="typesOfData">
+        <item>first question</item>
+        <item>second question</item>
+        <item>third question</item>
+        <item>fourth question</item>
+        <item>fifth question</item>
+        <item>sixth question</item>
+        <item>first question</item>
+        <item>second question</item>
+        <item>third question</item>
+        <item>fourth question</item>
+        <item>fifth question</item>
+        <item>sixth question</item>
+    </array>
+
 </resources>
