@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 
-
 public class FirstFragment extends Fragment {
 
     private int[] photo = {R.drawable.java_logo, R.drawable.android_logo, R.drawable.sql_logo, R.drawable.network_logo};
@@ -67,20 +66,12 @@ public class FirstFragment extends Fragment {
 
         //int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.spacing);
        // mRecyclerView.addItemDecoration(new SpacesItemDecoration(spacingInPixels));
-        lLayout = new GridLayoutManager(getContext(), 2);
+        lLayout = new GridLayoutManager(getContext(),2);
         mRecyclerView.setLayoutManager(lLayout);
 
         mAdapter = new MyfirstFragmentAdapter(photo);
         mRecyclerView.setAdapter(mAdapter);
     }
-
-   /* public int[] getImageArray(int[] array) {
-        int[] mArray = array;
-        for (int i = 0; i < mArray.length; i++) {
-            mArray[i] = array[i];
-        }
-        return mArray;
-    }*/
 
     public void addFragment(Fragment fragment) {
         fragmentTransaction = getActivity()
@@ -102,5 +93,4 @@ public class FirstFragment extends Fragment {
         super.onResume();
         MainActivity.mToolbar.setTitle(R.string.app_name);
     }
-
 }

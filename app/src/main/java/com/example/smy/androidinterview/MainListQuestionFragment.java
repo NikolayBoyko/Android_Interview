@@ -25,7 +25,6 @@ public class MainListQuestionFragment extends Fragment {
     private final int THREADS_INPUT_OUTPUT = 5;
 
     public static MainListQuestionFragment newInstance(Integer integer) {
-
         MainListQuestionFragment mainListQuestionFragment = new MainListQuestionFragment();
         Bundle args = new Bundle();
         args.putInt("someInt", integer);
