@@ -17,6 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
+    public static Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,20 +27,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onContentChanged() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle(R.string.app_name);
+        setSupportActionBar(mToolbar);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
                 mDrawerLayout,
-                toolbar,
+                mToolbar,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close
         );
-
-        mDrawerLayout.setDrawerListener(toggle);
+        mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.java:
                 Toast.makeText(this, "Click on Java", Toast.LENGTH_SHORT).show();
-                replaceFragment(new JavaMainListQuestionFragment());
+                replaceFragment(new MainListQuestionFragment());
                 break;
 
             case R.id.settings:

@@ -1,8 +1,6 @@
 package com.example.smy.androidinterview;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,12 +35,7 @@ public class MyJavaMainListQuestionAdapter extends RecyclerView.Adapter<MyJavaMa
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.myQuestion.setText(mQuestionList[position]);
-        holder.myQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("log", "click on: " + position);
-            }
-        });
+
     }
 
     @Override
