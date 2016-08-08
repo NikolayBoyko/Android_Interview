@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="SQLMainList">
+        <item>SQL_1</item>
+        <item>SQL_2</item>
+        <item>SQL_3</item>
+        <item>SQL_4</item>
+        <item>SQL_5</item>
+    </array>
+    <array name="SQL_1_ParentList">
+        <item>SQL_1_ParentList</item>
+        <item>SQL_1_ParentList</item>
+        <item>SQL_1_ParentList</item>
+        <item>SQL_1_ParentList</item>
+        <item>SQL_1_ParentList</item>
+    </array>
+    <array name="SQL_1_ChildList">
+        <item>SQL_1_ParentList</item>
+        <item>SQL_1_ParentList</item>
+        <item>SQL_1_ParentList</item>
+        <item>SQL_1_ParentList</item>
+        <item>SQL_1_ParentList</item>
+    </array>
+</resources>

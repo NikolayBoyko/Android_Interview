@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="NetworkMainList">
+        <item>Network_1</item>
+        <item>Network_2</item>
+        <item>Network_3</item>
+        <item>Network_4</item>
+        <item>Network_5</item>
+    </array>
+    <array name="Network_1_ParentList">
+        <item>Network_1_ParentList</item>
+        <item>Network_1_ParentList</item>
+        <item>Network_1_ParentList</item>
+        <item>Network_1_ParentList</item>
+        <item>Network_1_ParentList</item>
+    </array>
+    <array name="Network_1_ChildList">
+        <item>Network_1_ChildList</item>
+        <item>Network_1_ChildList</item>
+        <item>Network_1_ChildList</item>
+        <item>Network_1_ChildList</item>
+        <item>Network_1_ChildList</item>
+    </array>
+</resources>

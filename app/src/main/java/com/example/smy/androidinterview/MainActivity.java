@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        addFragment(new FirstFragment());
+        addFragment(new BaseListFragment());
 
         super.onContentChanged();
     }
@@ -68,13 +68,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.android:
-                addFragment(new FirstFragment());
                 Toast.makeText(this, "Click on Android", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.java:
                 Toast.makeText(this, "Click on Java", Toast.LENGTH_SHORT).show();
-                replaceFragment(new MainListQuestionFragment());
                 break;
 
             case R.id.settings:

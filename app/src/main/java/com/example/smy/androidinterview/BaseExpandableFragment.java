@@ -14,20 +14,20 @@ import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JavaExpandableFragment extends Fragment {
+public class BaseExpandableFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private static String[] setParentList;
     private static String[] setChildList;
 
-    public static JavaExpandableFragment newInstance(Integer integer, String[] parentList, String[] childList) {
-        JavaExpandableFragment javaExpandableFragment = new JavaExpandableFragment();
+    public static BaseExpandableFragment newInstance(Integer integer, String[] parentList, String[] childList) {
+        BaseExpandableFragment baseExpandableFragment = new BaseExpandableFragment();
         setParentList = parentList;
         setChildList = childList;
         Bundle args = new Bundle();
         args.putInt("someInt", integer);
-        javaExpandableFragment.setArguments(args);
-        return javaExpandableFragment;
+        baseExpandableFragment.setArguments(args);
+        return baseExpandableFragment;
     }
 
     @Nullable

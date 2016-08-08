@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +24,13 @@ public class MainListQuestionFragment extends Fragment {
     private final int COLLECTIONS = 3;
     private final int STRINGS = 4;
     private final int THREADS_INPUT_OUTPUT = 5;
+    private static String[] mData;
+    private int argument;
 
-    public static MainListQuestionFragment newInstance(Integer integer) {
+    public static MainListQuestionFragment newInstance(Integer integer, String[] mainList) {
 
         MainListQuestionFragment mainListQuestionFragment = new MainListQuestionFragment();
+        mData = mainList;
         Bundle args = new Bundle();
         args.putInt("someInt", integer);
         mainListQuestionFragment.setArguments(args);
@@ -37,6 +41,8 @@ public class MainListQuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.recycler, container, false);
+        argument = getArguments().getInt("someInt");
+        Log.d("log", "arguments = " + argument);
         return view;
     }
 
@@ -48,14 +54,23 @@ public class MainListQuestionFragment extends Fragment {
             @Override
             public void onItemClick(View view, int position) {
                 switch (position) {
-                    case TYPE_OF_DATA:
-                        replaceFragment(JavaExpandableFragment.newInstance(TYPE_OF_DATA, getResources().getStringArray(R.array.javaTypeOfDataList), getResources().getStringArray(R.array.javaChildList)));
+                    case 0:
+                        if (argument == 1) {
+                            replaceFragment(BaseExpandableFragment.newInstance(1, getResources().getStringArray(R.array.javaOOPParentList), getResources().getStringArray(R.array.javaOOPChildList)));
+                        }
+                        if (argument == 2) {
+                            replaceFragment(BaseExpandableFragment.newInstance(2, getResources().getStringArray(R.array.Android_1_ParentList), getResources().getStringArray(R.array.Android_1_ChildList)));
+                        }
+                        if (argument == 3) {
+                            replaceFragment(BaseExpandableFragment.newInstance(3, getResources().getStringArray(R.array.SQL_1_ParentList), getResources().getStringArray(R.array.SQL_1_ChildList)));
+                        }
+                        if (argument == 4) {
+                            replaceFragment(BaseExpandableFragment.newInstance(4, getResources().getStringArray(R.array.Network_1_ParentList), getResources().getStringArray(R.array.Network_1_ChildList)));
+                        }
                         break;
-                    case OOP:
-                        replaceFragment(JavaExpandableFragment.newInstance(OOP, getResources().getStringArray(R.array.javaTypeOfDataList), getResources().getStringArray(R.array.javaChildList)));
+                    case 1:
                         break;
-                    case EXCEPTIONS:
-                        replaceFragment(JavaExpandableFragment.newInstance(EXCEPTIONS, getResources().getStringArray(R.array.javaTypeOfDataList), getResources().getStringArray(R.array.javaChildList)));
+                    case 2:
                         break;
                     case COLLECTIONS:
                         break;
@@ -71,7 +86,7 @@ public class MainListQuestionFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyJavaMainListQuestionAdapter(getResources().getStringArray(R.array.JavaMainQuestion));
+        mAdapter = new MyJavaMainListQuestionAdapter(mData);
         mRecyclerView.setAdapter(mAdapter);
     }
 

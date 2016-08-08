@@ -26,11 +26,6 @@
         <item>Строки</item>
         <item>Потоки ввода/вывода</item>
     </array>
-    <array name="javaTypeOfDataList">
-        <item>Литералы</item>
-        <item>Переменные</item>
-        <item>Операции</item>
-    </array>
 
     <integer-array name="icons">
         <item>@drawable/java_logo</item>
