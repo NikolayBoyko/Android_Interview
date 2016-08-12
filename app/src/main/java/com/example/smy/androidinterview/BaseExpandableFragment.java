@@ -41,7 +41,6 @@ public class BaseExpandableFragment extends Fragment {
         MyExpandableRecyclerAdapter myExpandableRecyclerAdapter = new MyExpandableRecyclerAdapter(getActivity(), generateListItems());
         myExpandableRecyclerAdapter.onRestoreInstanceState(savedInstanceState);
         mRecyclerView.setAdapter(myExpandableRecyclerAdapter);
-
         return view;
     }
 

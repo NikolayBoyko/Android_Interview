@@ -57,11 +57,24 @@ public class BaseListFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
     }
 
+    public void addFragment(Fragment fragment) {
+        fragmentTransaction = getActivity()
+                .getSupportFragmentManager()
+                .beginTransaction();
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.add(R.id.main_content, fragment).commit();
+    }
+
     public void replaceFragment(Fragment fragment) {
         fragmentTransaction = getActivity()
                 .getSupportFragmentManager()
                 .beginTransaction();
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.replace(R.id.main_content, fragment).commit();
+    }
+
+    public void onResume() {
+        super.onResume();
+        MainActivity.mToolbar.setTitle(R.string.app_name);
     }
 }
